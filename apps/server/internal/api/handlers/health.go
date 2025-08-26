@@ -18,8 +18,8 @@ func HealthCheck(c *gin.Context) {
 	response := HealthResponse{
 		Status:    "healthy",
 		Timestamp: time.Now(),
-		Service:   "chess-game-server",
-		Version:   "1.0.0",
+		Service:   "chess-game-server-dev",
+		Version:   "1.0.1",
 	}
 
 	c.JSON(http.StatusOK, response)

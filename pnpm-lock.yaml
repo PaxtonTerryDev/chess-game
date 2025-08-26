@@ -66,6 +66,8 @@ importers:
 
   apps/server: {}
 
+  packages/types: {}
+
 packages:
 
   '@alloc/quick-lru@5.2.0':

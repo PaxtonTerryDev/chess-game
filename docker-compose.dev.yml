@@ -1,0 +1,39 @@
+services:
+  client:
+    build:
+      context: ./apps/client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/client:/app
+      - ./packages:/packages
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    networks:
+      - chess-network
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./apps/server
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./apps/server:/app
+      - ./packages:/packages
+    environment:
+      - ENV=development
+      - PORT=8080
+      - ALLOWED_ORIGINS=http://localhost:3000
+    networks:
+      - chess-network
+
+networks:
+  chess-network:
+    driver: bridge
