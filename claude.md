@@ -12,18 +12,21 @@ Building a roguelike chess game where players start with a standard chess board,
 
 ## Technical Stack
 
-### Frontend
+### Frontend (Client)
 - **Framework**: Next.js with React + TypeScript
 - **Animation**: Framer Motion (handles piece dragging, placement, and UI animations)
 - **Styling**: CSS/Tailwind for UI, Canvas/SVG for chess board rendering
 - **Deployment**: Vercel (automatic deployment from GitHub)
 
-### Backend
+### Backend (Server)
 - **Language**: Go 
 - **Framework**: Gin or Echo
 - **Chess Engine**: Stockfish via UCI protocol with goroutines for parallel processing
-- **Database**: PostgreSQL (likely via Supabase for auth + free tier)
 - **Deployment**: Railway or Render (auto-deploy from GitHub)
+
+### Database (db)
+- **Engine**: PostgreSQL
+- **Provider**: Supabase
 
 ### Repository Structure
 - **Monorepo**: Managed with Turbo
